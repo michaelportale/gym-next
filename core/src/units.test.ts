@@ -31,6 +31,12 @@ describe('roundToIncrement', () => {
     expect(roundToIncrement(-101.25, 2.5)).toBe(-102.5)
   })
 
+  it('rounds decimal halves up even when the division lands just below .5', () => {
+    expect(roundToIncrement(0.15, 0.1)).toBe(0.2)
+    expect(roundToIncrement(-0.15, 0.1)).toBe(-0.2)
+    expect(roundToIncrement(2.675, 0.01)).toBe(2.68)
+  })
+
   it('carries no float noise', () => {
     expect(roundToIncrement(7.3, 0.1)).toBe(7.3)
   })
