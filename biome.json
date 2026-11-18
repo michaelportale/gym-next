@@ -4,5 +4,5 @@
     "formatter": { "quoteStyle": "single", "semicolons": "asNeeded", "trailingCommas": "all" }
   },
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
-  "files": { "includes": ["**", "!**/node_modules", "!**/coverage"] }
+  "files": { "includes": ["**", "!**/node_modules", "!**/coverage", "!core/src/catalogue.json"] }
 }
