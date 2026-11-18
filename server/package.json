@@ -1,0 +1,11 @@
+{
+  "name": "@gym-next/server",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@gym-next/core": "*"
+  },
+  "scripts": {
+    "start": "node src/main.ts"
+  }
+}
