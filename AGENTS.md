@@ -5,23 +5,25 @@ Design is in `docs/ARCHITECTURE.md` (authoritative; read it before structural ch
 
 ## Commands (Node 24, from the repo root)
 
-| Task                                | Command                                                     |
-| ----------------------------------- | ----------------------------------------------------------- |
-| Install                             | `npm install`                                               |
-| Full check (typecheck, lint, tests) | `npm run check`                                             |
-| Tests                               | `npm test`                                                  |
-| Typecheck                           | `npm run typecheck`                                         |
-| Lint                                | `npm run lint`                                              |
-| Format (writes files)               | `npm run format`                                            |
-| Start server                        | `PORT=3000 DATABASE_PATH=./data/app.db npm start -w server` |
+| Task                                                           | Command                                                     |
+| -------------------------------------------------------------- | ----------------------------------------------------------- |
+| Install                                                        | `npm install`                                               |
+| Full check (typecheck, lint, tests)                            | `npm run check`                                             |
+| Tests                                                          | `npm test`                                                  |
+| Typecheck                                                      | `npm run typecheck`                                         |
+| Lint                                                           | `npm run lint`                                              |
+| Format (writes files)                                          | `npm run format`                                            |
+| Regenerate catalogue (CI never downloads; output is committed) | `npm run catalogue`                                         |
+| Start server                                                   | `PORT=3000 DATABASE_PATH=./data/app.db npm start -w server` |
 
 ## Layout
 
 ```
-core/     pure domain logic (units today); no I/O, no Node APIs (tsconfig has types: [])
+core/     pure domain logic (units, ids, exercises, e1RM); no I/O, no Node APIs (tsconfig has types: [])
 server/   node:http API + node:sqlite; .ts run directly by Node (type stripping)
 mcp/      planned: MCP server over the HTTP API
 app/      planned: Expo iPhone app
+scripts/  repo tooling; build-catalogue.ts regenerates core/src/catalogue.json
 docs/     ARCHITECTURE.md
 ```
 
