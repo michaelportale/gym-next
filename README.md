@@ -1,7 +1,7 @@
 # gym-next
 
 An iPhone-first strength-training app for a small circle of people (the owner, a partner,
-friends), with a public API that AI agents use the same way the app does.
+friends), with a planned public API that AI agents will use the same way the app does.
 
 That is the design, not the current state. What exists today is `core/` (units, ids, an exercise
 catalogue, set and workout types, estimated 1RM) and a server skeleton with one route,
