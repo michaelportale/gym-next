@@ -1,9 +1,14 @@
 # gym-next
 
 An iPhone-first strength-training app for a small circle of people (the owner, a partner,
-friends), with a public API that AI agents use the same way the app does. Logging a set never
-waits on the network, every change goes through the same validated mutations, and friends only
-ever read a precomputed card, never your rows.
+friends), with a public API that AI agents use the same way the app does.
+
+That is the design, not the current state. What exists today is `core/` (units, ids, an exercise
+catalogue, set and workout types, estimated 1RM) and a server skeleton with one route,
+`GET /health`. Still planned, per [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): the iPhone app,
+logging a set without waiting on the network, validated mutations and sync for every change,
+scoped tokens and an MCP server for agents, and friends who only ever read a precomputed card,
+never your rows.
 
 Status: **P0: scaffold**. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design.
 
